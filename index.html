@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#65110d">
+  <title>सत्यमेव CHS | गणेशोत्सव २०२६</title>
+
+  <!--
+    ============================================================
+    EASY EDIT GUIDE
+    ============================================================
+    1. Replace poster.png with your uploaded Ganpati poster image.
+    2. Search for "EDIT HERE" below to change text/dates/timings.
+    3. Upload this index.html + poster.png to your GitHub repository.
+    4. The same GitHub Pages URL can keep the same QR code.
+    ============================================================
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --maroon:#68130e;
+      --dark:#310805;
+      --orange:#d95b18;
+      --gold:#d7a52a;
+      --cream:#fff5df;
+      --paper:#fffaf0;
+      --text:#4b2116;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:"Noto Sans Devanagari",sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%,rgba(216,165,42,.16),transparent 25%),
+        radial-gradient(circle at 90% 35%,rgba(217,91,24,.12),transparent 25%),
+        linear-gradient(#fff9ed,#fff0d2,#fff8e9);
+    }
+
+    .top-line{
+      position:fixed;
+      z-index:100;
+      top:0;
+      left:0;
+      width:100%;
+      height:5px;
+      background:linear-gradient(90deg,var(--maroon),var(--gold),var(--orange),var(--gold),var(--maroon));
+    }
+
+    /* ================= HERO ================= */
+    .hero{
+      min-height:100svh;
+      padding:45px 16px 35px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-inner{
+      width:min(950px,100%);
+      position:relative;
+      z-index:2;
+    }
+
+    .poster{
+      display:block;
+      width:min(900px,100%);
+      max-height:58vh;
+      object-fit:contain;
+      margin:0 auto 18px;
+      border-radius:20px;
+      filter:drop-shadow(0 18px 30px rgba(72,15,5,.24));
+      animation:float 5s ease-in-out infinite;
+    }
+
+    .small-title{
+      color:var(--maroon);
+      font-weight:800;
+      font-size:clamp(1rem,3vw,1.35rem);
+    }
+
+    h1{
+      margin:4px 0;
+      color:var(--maroon);
+      font-family:"Tiro Devanagari Marathi",serif;
+      font-size:clamp(2.5rem,10vw,5.8rem);
+      line-height:.95;
+      text-shadow:2px 3px #f3c65d;
+    }
+
+    .year{
+      color:var(--orange);
+      font-size:clamp(1.6rem,5vw,2.7rem);
+      font-weight:900;
+    }
+
+    .morya{
+      margin:15px 0;
+      color:#a52215;
+      font-size:clamp(1.35rem,4vw,2.1rem);
+      font-weight:900;
+      animation:glow 2.5s infinite;
+    }
+
+    .intro{
+      max-width:720px;
+      margin:auto;
+      line-height:1.85;
+      font-size:clamp(.98rem,3vw,1.2rem);
+    }
+
+    .button{
+      display:inline-block;
+      margin-top:20px;
+      padding:12px 25px;
+      color:white;
+      background:linear-gradient(135deg,var(--maroon),#a72b16);
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:800;
+      box-shadow:0 10px 25px rgba(104,19,14,.25);
+    }
+
+    /* ================= GENERAL ================= */
+    section{
+      padding:70px 16px;
+    }
+
+    .container{
+      width:min(980px,100%);
+      margin:auto;
+    }
+
+    .section-title{
+      margin:0;
+      text-align:center;
+      color:var(--maroon);
+      font-family:"Tiro Devanagari Marathi",serif;
+      font-size:clamp(2rem,7vw,3.4rem);
+    }
+
+    .ornament{
+      text-align:center;
+      color:var(--gold);
+      font-size:23px;
+      margin:10px 0 28px;
+    }
+
+    .card{
+      background:rgba(255,250,240,.92);
+      border:1px solid rgba(104,19,14,.15);
+      border-radius:25px;
+      padding:25px;
+      box-shadow:0 15px 45px rgba(75,25,5,.1);
+    }
+
+    /* ================= DATES ================= */
+    .dates{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:15px;
+      margin-bottom:25px;
+    }
+
+    .date{
+      padding:12px 18px;
+      border-radius:15px;
+      color:#fff;
+      background:var(--maroon);
+      font-weight:900;
+    }
+
+    .arrow{
+      color:var(--gold);
+      font-size:27px;
+    }
+
+    /* ================= SHLOK ================= */
+    .shlok{
+      text-align:center;
+      color:#67170f;
+      font-family:"Tiro Devanagari Marathi",serif;
+      font-size:clamp(1.25rem,4vw,2rem);
+      line-height:2;
+    }
+
+    .meaning{
+      text-align:center;
+      line-height:1.8;
+      color:#765444;
+    }
+
+    /* ================= AARTI ================= */
+    .timings{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .timing{
+      text-align:center;
+      padding:25px 15px;
+      border-radius:22px;
+      background:linear-gradient(145deg,#fff2c8,#ffe0a1);
+      border:1px solid #e3b33e;
+    }
+
+    .timing .icon{
+      font-size:38px;
+    }
+
+    .timing h3{
+      margin:7px 0;
+      color:var(--maroon);
+    }
+
+    .timing strong{
+      color:#ae3615;
+      font-size:1.35rem;
+    }
+
+    /* ================= PROGRAM ================= */
+    .program{
+      display:grid;
+      gap:18px;
+    }
+
+    .event{
+      display:grid;
+      grid-template-columns:120px 1fr;
+      gap:18px;
+      padding:21px;
+      border-radius:22px;
+      background:var(--paper);
+      border-left:6px solid var(--orange);
+      box-shadow:0 10px 25px rgba(70,20,5,.08);
+    }
+
+    .event-date{
+      text-align:center;
+      color:white;
+      background:linear-gradient(145deg,var(--maroon),#a52c16);
+      border-radius:16px;
+      padding:12px 5px;
+      font-weight:900;
+    }
+
+    .event-date b{
+      display:block;
+      font-size:1.7rem;
+    }
+
+    .event h3{
+      color:var(--maroon);
+      margin:0 0 8px;
+      font-size:1.3rem;
+    }
+
+    .event p{
+      margin:0;
+      line-height:1.8;
+    }
+
+    /* ================= THANK YOU ================= */
+    .ending{
+      padding:75px 16px;
+      color:#fff5df;
+      text-align:center;
+      background:linear-gradient(145deg,var(--maroon),var(--dark));
+    }
+
+    .ending h2{
+      margin:0 0 15px;
+      color:#ffd568;
+      font-family:"Tiro Devanagari Marathi",serif;
+      font-size:clamp(2rem,7vw,3.5rem);
+    }
+
+    .ending p{
+      max-width:720px;
+      margin:auto;
+      line-height:1.9;
+      font-size:1.1rem;
+    }
+
+    .brand{
+      margin-top:25px;
+      font-size:1.25rem;
+      font-weight:900;
+    }
+
+    .tagline{
+      margin-top:5px;
+      color:#f0c967;
+    }
+
+    /* ================= MOBILE ================= */
+    @media(max-width:650px){
+      .timings{grid-template-columns:1fr}
+      .event{grid-template-columns:90px 1fr}
+      .event-date b{font-size:1.45rem}
+      section{padding:55px 13px}
+      .card{padding:19px}
+      .poster{max-height:48vh}
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-9px)}
+    }
+
+    @keyframes glow{
+      0%,100%{text-shadow:none}
+      50%{text-shadow:0 0 18px rgba(238,174,42,.75)}
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="top-line"></div>
+
+<!-- ==========================================================
+     1. OPENING SCREEN
+     ========================================================== -->
+<header class="hero">
+  <div class="hero-inner">
+
+    <!-- EDIT HERE: Replace poster.png with your image filename -->
+    <img
+      class="poster"
+      src="poster.png"
+      alt="सत्यमेव CHS गणेशोत्सव २०२६">
+
+    <div class="small-title">॥ श्री गणेशाय नमः ॥</div>
+
+    <!-- EDIT HERE -->
+    <h1>गणेशोत्सव</h1>
+    <div class="year">२०२६</div>
+
+    <!-- EDIT HERE -->
+    <div class="morya">🙏 गणपती बाप्पा मोरया! 🙏</div>
+
+    <!-- EDIT HERE -->
+    <p class="intro">
+      सत्यमेव युवा मित्र मंडळ आयोजित गणेशोत्सव २०२६ मध्ये
+      आपले मनःपूर्वक स्वागत आहे.<br>
+      आपल्या उपस्थितीने आणि सहभागाने हा उत्सव अधिक मंगलमय होऊ दे.
+    </p>
+
+    <a class="button" href="#darshan">कार्यक्रम पहा ↓</a>
+  </div>
+</header>
+
+
+<!-- ==========================================================
+     2. GANPATI DARSHAN + DATES
+     ========================================================== -->
+<section id="darshan">
+  <div class="container">
+
+    <h2 class="section-title">गणपती दर्शन</h2>
+    <div class="ornament">✦ ॐ ✦</div>
+
+    <div class="card">
+
+      <div class="dates">
+        <!-- EDIT HERE -->
+        <div class="date">१४ सप्टेंबर २०२६</div>
+        <div class="arrow">→</div>
+        <!-- EDIT HERE -->
+        <div class="date">१९ सप्टेंबर २०२६</div>
+      </div>
+
+      <!-- EDIT HERE -->
+      <div class="shlok">
+        वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
+        निर्विघ्नं कुरु मे देव शुभकार्येषु सर्वदा॥
+      </div>
+
+      <p class="meaning">
+        श्री गणरायांच्या कृपेने सर्व कार्ये निर्विघ्नपणे पार पडोत,
+        हीच मंगलमय प्रार्थना.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ==========================================================
+     3. AARTI TIMINGS
+     ========================================================== -->
+<section>
+  <div class="container">
+
+    <h2 class="section-title">आरतीची वेळ</h2>
+    <div class="ornament">🪔 ✦ 🪔</div>
+
+    <div class="timings">
+
+      <div class="timing">
+        <div class="icon">🌅</div>
+        <!-- EDIT HERE -->
+        <h3>सकाळची आरती</h3>
+        <strong>सकाळी ९:३० वा.</strong>
+      </div>
+
+      <div class="timing">
+        <div class="icon">🌙</div>
+        <!-- EDIT HERE -->
+        <h3>संध्याकाळची आरती</h3>
+        <strong>रात्री ८:३० वा.</strong>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ==========================================================
+     4. PROGRAM SCHEDULE
+     ========================================================== -->
+<section id="schedule">
+  <div class="container">
+
+    <h2 class="section-title">कार्यक्रमाची रूपरेषा</h2>
+    <div class="ornament">❖ उत्सवाचे खास क्षण ❖</div>
+
+    <div class="program">
+
+      <!-- 17 SEPTEMBER -->
+      <article class="event">
+        <div class="event-date">
+          <b>१७</b>
+          सप्टेंबर
+        </div>
+
+        <div>
+          <!-- EDIT HERE -->
+          <h3>पूजा व महाप्रसाद</h3>
+
+          <!-- EDIT HERE -->
+          <p>
+            🌺 श्री गणेश पूजा<br>
+            🍛 महाप्रसाद<br>
+            💃 महिलांसाठी नृत्य व मनोरंजनात्मक खेळ
+          </p>
+        </div>
+      </article>
+
+
+      <!-- 18 SEPTEMBER -->
+      <article class="event">
+        <div class="event-date">
+          <b>१८</b>
+          सप्टेंबर
+        </div>
+
+        <div>
+          <!-- EDIT HERE -->
+          <h3>युवा मनोरंजन दिवस</h3>
+
+          <!-- EDIT HERE -->
+          <p>
+            🎮 मुलांसाठी विविध खेळ<br>
+            🎯 मुली व मुलांसाठी मनोरंजनात्मक खेळ<br>
+            🏆 विजेत्यांसाठी आकर्षक बक्षिसे
+          </p>
+        </div>
+      </article>
+
+
+      <!-- 19 SEPTEMBER -->
+      <article class="event">
+        <div class="event-date">
+          <b>१९</b>
+          सप्टेंबर
+        </div>
+
+        <div>
+          <!-- EDIT HERE -->
+          <h3>विसर्जन सोहळा</h3>
+
+          <!-- EDIT HERE -->
+          <p>
+            🙏 श्री गणेश विसर्जन सोहळा<br>
+            🥁 ढोल-ताशांच्या गजरात भक्तिमय वातावरणात बाप्पांना निरोप.<br>
+            🚩 गणपती बाप्पा मोरया!
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ==========================================================
+     5. FINAL THANK-YOU
+     ========================================================== -->
+<section class="ending">
+
+  <!-- EDIT HERE -->
+  <h2>गणपती बाप्पा मोरया! 🙏</h2>
+
+  <!-- EDIT HERE -->
+  <p>
+    हा मंगलमय गणेशोत्सव आपल्या सर्वांच्या सहकार्याने आणि सहभागाने
+    साजरा होत आहे. आपल्या उपस्थितीबद्दल, प्रेमाबद्दल आणि आशीर्वादाबद्दल
+    मनःपूर्वक धन्यवाद!
+  </p>
+
+  <!-- EDIT HERE -->
+  <div class="brand">सत्यमेव युवा मित्र मंडळ</div>
+  <div class="tagline">एकता | सेवा | संस्कृती</div>
+
+</section>
+
+</body>
+</html>
